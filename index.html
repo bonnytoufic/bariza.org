@@ -65,17 +65,67 @@ text-align:center;
 padding:20px;
 margin-top:30px;
 }
+  .hero {
+  position: relative;
+  height: 80vh;
+  background: url('pexels-cottonbro-5858857.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 76, 129, 0.65); /* blue medical overlay */
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 20px;
+  opacity: 0.95;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: white;
+  color: #0f4c81;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
 </style>
 
 </head>
 
 <body>
 
-<header>
-<h1>Bariza Pulmonary Support Services LLC</h1>
-<p>Respiratory Care Consulting & Pulmonary Support Services</p>
-  
-  <img src="pexels-cottonbro-5858857.jpg" alt="Bariza Pulmonary Support Services" style="width:200px;border-radius:10px;margin-top:20px;">
+<header class="hero">
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>Bariza Pulmonary Support Services LLC</h1>
+    <p>Respiratory Care Consulting & Pulmonary Support Services</p>
+    <a href="#contact" class="button">Request Consultation</a>
+  </div>
 </header>
 
 <div class="container">
