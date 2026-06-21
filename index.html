@@ -5,211 +5,333 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bariza Pulmonary Support Services LLC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{
-font-family:'Poppins',sans-serif;
+
+*{
 margin:0;
 padding:0;
-line-height:1.6;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
 background:#f7f9fc;
+color:#333;
+line-height:1.7;
 }
 
-header{
-background:#0f4c81;
-color:white;
-padding:60px 20px;
+.hero{
+position:relative;
+height:90vh;
+background:url('pexels-cottonbro-5858857.jpg') center center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
+color:white;
 }
 
-header h1{
-margin:0;
-font-size:40px;
+.overlay{
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(15,76,129,.72);
 }
 
-header p{
-font-size:20px;
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:20px;
 }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
-}
-
-.card{
-background:white;
-padding:25px;
+.hero h1{
+font-size:60px;
+font-weight:700;
+line-height:1.1;
 margin-bottom:20px;
-border-radius:10px;
-box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
-h2{
-color:#0f4c81;
+.hero-subtitle{
+font-size:24px;
+margin-bottom:20px;
+font-weight:500;
+}
+
+.hero-text{
+font-size:18px;
+max-width:800px;
+margin:auto;
 }
 
 .button{
 display:inline-block;
+margin-top:30px;
+padding:15px 30px;
+background:white;
+color:#0f4c81;
+text-decoration:none;
+font-weight:600;
+border-radius:8px;
+transition:.3s;
+}
+
+.button:hover{
+transform:translateY(-2px);
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:70px 25px;
+}
+
+.section-title{
+text-align:center;
+color:#0f4c81;
+font-size:38px;
+margin-bottom:20px;
+}
+
+.section-subtitle{
+text-align:center;
+max-width:900px;
+margin:0 auto 50px;
+}
+
+.card{
+background:white;
+padding:35px;
+margin-bottom:25px;
+border-radius:12px;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
+border-top:5px solid #0f4c81;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.service-card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.service-card h3{
+color:#0f4c81;
+margin-bottom:12px;
+}
+
+ul{
+padding-left:20px;
+}
+
+.cta{
 background:#0f4c81;
 color:white;
-padding:12px 20px;
-text-decoration:none;
-border-radius:5px;
+text-align:center;
+padding:70px 20px;
+}
+
+.cta h2{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.cta p{
+max-width:800px;
+margin:auto;
 }
 
 footer{
 background:#0f4c81;
 color:white;
 text-align:center;
-padding:20px;
-margin-top:30px;
-}
-  .hero {
-  position: relative;
-  height: 80vh;
-  background: url('pexels-cottonbro-5858857.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
+padding:25px;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(15, 76, 129, 0.65); /* blue medical overlay */
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
 }
 
-.hero .content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 20px;
+.hero-subtitle{
+font-size:20px;
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
 }
 
-.hero p {
-  font-size: 20px;
-  opacity: 0.95;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: white;
-  color: #0f4c81;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
 </style>
 
 </head>
 
 <body>
 
-<header class="hero">
-  <div class="overlay"></div>
+<section class="hero">
 
-  <div class="content">
-    <h1>Bariza Pulmonary Support Services LLC</h1>
+<div class="overlay"></div>
 
-    <p style="font-size:24px;">
-      Expert Respiratory Care Consulting & Pulmonary Support Services
-    </p>
+<div class="hero-content">
 
-    <p>
-      Helping healthcare organizations improve respiratory outcomes while supporting patients with COPD, oxygen therapy, sleep apnea, ventilator care, and chronic lung disease.
-    </p>
+<h1>Respiratory Care Solutions That Improve Outcomes</h1>
 
-    <a href="mailto:bonny.toufic@gmail.com?subject=Request Consultation"
-    class="button">
-    Request Consultation
-    </a>
-  </div>
-</header>
+<p class="hero-subtitle">
+Serving Hospitals, Skilled Nursing Facilities, Home Health Agencies, Assisted Living Communities, and Individual Patients Throughout Southern California
+</p>
+
+<p class="hero-text">
+Bariza Pulmonary Support Services LLC provides respiratory consulting, pulmonary education, oxygen therapy support, COPD management guidance, ventilator education, CPAP/BiPAP coaching, respiratory equipment training, and caregiver support designed to improve patient outcomes and quality of life.
+</p>
+
+<a href="mailto:bonny.toufic@gmail.com?subject=Request Consultation - Bariza Pulmonary Support Services" class="button">
+Request Consultation
+</a>
+
+</div>
+
+</section>
 
 <div class="container">
-  <div class="card">
 
-<h2>Serving Healthcare Facilities & Individuals</h2>
+<div class="card">
+
+<h2 class="section-title">Who We Are</h2>
 
 <p>
-Bariza Pulmonary Support Services LLC provides respiratory consulting, patient education, oxygen therapy support, CPAP coaching, pulmonary rehabilitation support, and respiratory equipment training throughout Southern California.
+Founded by Bonny Toufic, RRT, Bariza Pulmonary Support Services LLC was established to provide professional respiratory consulting and pulmonary support services to healthcare organizations and individuals throughout Southern California.
 </p>
 
+<br>
+
 <p>
-We work with hospitals, skilled nursing facilities, home health agencies, assisted living communities, caregivers, and individual patients to improve respiratory outcomes and quality of life.
+With experience in acute care, subacute care, pulmonary rehabilitation, ventilator management, oxygen therapy, chronic respiratory disease management, and patient education, we deliver practical respiratory solutions that help improve patient outcomes and support healthcare teams.
 </p>
 
 </div>
 
 <div class="card">
-<h2>About Us</h2>
-<p>
 
-Founded by Bonny Toufic, RRT, Bariza Pulmonary Support Services LLC provides professional respiratory consulting and pulmonary support services throughout Southern California.
+<h2 class="section-title">How We Help Healthcare Facilities</h2>
 
-Our mission is to improve respiratory health outcomes through patient education, caregiver support, respiratory equipment training, and healthcare consulting services.
+<div class="services">
 
-</p>
+<div class="service-card">
+<h3>Respiratory Program Support</h3>
+<p>Support respiratory initiatives, education programs, and quality improvement efforts.</p>
+</div>
+
+<div class="service-card">
+<h3>Staff Education & Training</h3>
+<p>Provide respiratory-focused education for nurses, caregivers, and clinical staff.</p>
+</div>
+
+<div class="service-card">
+<h3>COPD Management Support</h3>
+<p>Assist facilities with patient education and chronic respiratory disease management strategies.</p>
+</div>
+
+<div class="service-card">
+<h3>Ventilator & Equipment Education</h3>
+<p>Training and support related to respiratory equipment, oxygen therapy systems, and ventilator care.</p>
+</div>
+
+</div>
+
 </div>
 
 <div class="card">
-<h2>Our Services</h2>
+
+<h2 class="section-title">How We Help Patients & Families</h2>
+
+<div class="services">
+
+<div class="service-card">
+<h3>Oxygen Therapy Education</h3>
+<p>Safe and effective oxygen use guidance for patients and caregivers.</p>
+</div>
+
+<div class="service-card">
+<h3>CPAP & BiPAP Coaching</h3>
+<p>Improve compliance, comfort, and confidence with respiratory support devices.</p>
+</div>
+
+<div class="service-card">
+<h3>COPD Education</h3>
+<p>Personalized support to help patients better understand and manage their condition.</p>
+</div>
+
+<div class="service-card">
+<h3>Caregiver Training</h3>
+<p>Hands-on education for families caring for loved ones with respiratory conditions.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2 class="section-title">Why Choose Bariza Pulmonary Support Services?</h2>
 
 <ul>
-<li>COPD Education & Management Support</li>
-<li>Oxygen Therapy Education & Safety Training</li>
-<li>CPAP & BiPAP Coaching</li>
-<li>Respiratory Equipment Training</li>
-<li>Ventilator Education & Support</li>
-<li>Pulmonary Rehabilitation Support</li>
-<li>Home Health Respiratory Consulting</li>
-<li>Skilled Nursing Facility Respiratory Support</li>
-<li>Staff Education & Training</li>
+
+<li>Registered Respiratory Therapist (RRT)</li>
+
+<li>Experience in Acute Care, Subacute Care & Pulmonary Rehabilitation</li>
+
+<li>Ventilator Management Experience</li>
+
+<li>Patient & Caregiver Education Expertise</li>
+
+<li>Respiratory Equipment Training & Support</li>
+
+<li>Committed to Improving Respiratory Outcomes</li>
+
 </ul>
 
 </div>
 
-<div class="card">
-<h2>Contact</h2>
+</div>
 
-<p><strong>Bonny Toufic, RRT</strong></p>
+<section class="cta">
 
-<p>Email: bonny.toufic@gmail.com</p>
-
-<p>Website: www.bariza.org</p>
+<h2>Request a Consultation</h2>
 
 <p>
-Serving Hospitals, Skilled Nursing Facilities, Home Health Agencies, Assisted Living Communities, and Individual Patients throughout Southern California.
+Whether you are a healthcare facility seeking respiratory support services or an individual looking for respiratory education and guidance, we are here to help.
 </p>
 
-<p>
-<a href="mailto:bonny.toufic@gmail.com?subject=Request Consultation"
-class="button">
-Request Consultation
+<a href="mailto:bonny.toufic@gmail.com?subject=Request Consultation - Bariza Pulmonary Support Services" class="button">
+Contact Us Today
 </a>
-</p>
 
-</div>
-
-</div>
+</section>
 
 <footer>
-© 2026 Bariza Pulmonary Support Services LLC
+
+<p><strong>Bariza Pulmonary Support Services LLC</strong></p>
+
+<p>Bonny Toufic, RRT</p>
+
+<p>Southern California</p>
+
+<p>bonny.toufic@gmail.com</p>
+
+<p>© 2026 Bariza Pulmonary Support Services LLC</p>
+
 </footer>
 
 </body>
 </html>
+
