@@ -129,7 +129,7 @@ opacity:.96;
 }
 
 .hero-buttons{
-margin-top:40px;
+margin-top:50px;
 display:flex;
 justify-content:center;
 gap:20px;
@@ -224,7 +224,7 @@ text-align:center;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
-margin-top:50px;
+margin-top:80px;
 }
 
 .card{
