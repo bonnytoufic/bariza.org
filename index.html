@@ -34,24 +34,24 @@ background:#f7f9fc;
 color:#333;
 line-height:1.7;
 }
-
+@media(max-width:768px){
 /* NAVIGATION */
 
-.navbar{
-position:fixed;
-height:80px;
-top:0;
-left:0;
-width:100%;
-background:white;
-padding:18px 50px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 15px rgba(0,0,0,.08);
-z-index:9999;
-}
+<div class="nav-links">
+<a href="#about">About Us</a>
+<a href="#facilities">Healthcare Facilities</a>
+<a href="#patients">Patients & Families</a>
+<a href="#contact">Consultation</a>
+</div>
+/* Prevent section titles from hiding behind navbar */
 
+#about,
+#facilities,
+#patients,
+#contact{
+scroll-margin-top:120px;
+}
+  
 .logo{
 font-size:22px;
 font-weight:700;
@@ -108,10 +108,13 @@ text-transform:uppercase;
 }
 
 .hero h1{
-font-size:58px;
-line-height:1.1;
+font-size:50px;
+line-height:1.2;
 margin-bottom:20px;
 font-weight:700;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
 }
 
 .hero-subtitle{
@@ -210,10 +213,7 @@ footer p{
 margin-bottom:6px;
 }
 
-/* MOBILE */
-
 @media(max-width:768px){
-/* Prevent section titles from hiding under navbar */
 
 #about,
 #facilities,
@@ -222,14 +222,24 @@ margin-bottom:6px;
 scroll-margin-top:120px;
 }
 .navbar{
-flex-direction:column;
-padding:15px;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:white;
+padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+z-index:9999;
 }
 
 .logo{
-font-size:18px;
-text-align:center;
-margin-bottom:10px;
+font-size:24px;
+font-weight:700;
+color:#0f4c81;
+letter-spacing:.5px;
 }
 
 .nav-links a{
@@ -260,10 +270,10 @@ BARIZA Pulmonary Support Services LLC
 </div>
 
 <div class="nav-links">
-<a href="#about">About</a>
-<a href="#facilities">Facilities</a>
-<a href="#patients">Patients</a>
-<a href="#contact">Contact</a>
+<a href="#about">About Us</a>
+<a href="#facilities">Healthcare Facilities</a>
+<a href="#patients">Patients & Families</a>
+<a href="#contact">Consultation</a>
 </div>
 
 </nav>
