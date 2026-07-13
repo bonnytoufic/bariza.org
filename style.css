@@ -76,13 +76,13 @@ color:#0f4c81;
 
 .hero{
 position:relative;
-height:100vh;
+min-height:100vh;
 background:url("hero.jpg") center center/cover no-repeat;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:120px 30px 80px;
+padding:180px 30px 100px;
 overflow:hidden;
 }
 
@@ -97,11 +97,16 @@ position:relative;
 z-index:2;
 max-width:900px;
 color:white;
+margin-top:40px;
 }
 
 .hero-small{
-letter-spacing:4px;
-font-size:15px;
+letter-spacing:3px;
+font-size:17px;
+font-weight:700;
+margin-bottom:25px;
+text-transform:uppercase;
+}
 font-weight:600;
 text-transform:uppercase;
 margin-bottom:18px;
