@@ -1,337 +1,794 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bariza Pulmonary Support Services | Respiratory Consulting</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
 
-<title>Bariza Pulmonary Support Services LLC</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        /* ============================================
+                   RESET & BASE
+                ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        html {
+            scroll-behavior: smooth;
+        }
 
-<link rel="stylesheet" href="style.css">
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a202c;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================
+                   BUTTONS
+                ============================================ */
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #0b3b5c;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(11, 59, 92, 0.25);
+        }
+        .btn-primary:hover {
+            background: #144e75;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(11, 59, 92, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #0b3b5c;
+            border-color: #0b3b5c;
+        }
+        .btn-secondary:hover {
+            background: #0b3b5c;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .btn-accent {
+            background: #e67e22;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(230, 126, 34, 0.3);
+        }
+        .btn-accent:hover {
+            background: #d35400;
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+                   NAVIGATION (Sticky)
+                ============================================ */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
+            color: #0b3b5c;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .logo span {
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: #4a5568;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2d3748;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+        .nav-menu a:hover {
+            color: #0b3b5c;
+        }
+        .nav-menu .btn {
+            padding: 10px 24px;
+            font-size: 0.85rem;
+        }
+
+        /* ============================================
+                   HERO
+                ============================================ */
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -10%;
+            top: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(11, 59, 92, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #0b3b5c;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        .hero-content h1 .highlight {
+            color: #e67e22;
+            position: relative;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(230, 126, 34, 0.12);
+            color: #d35400;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 6px 16px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: #4a5568;
+            max-width: 540px;
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Hero Visual (Right side) */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-visual .card-float {
+            background: #fff;
+            padding: 32px 40px;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+            max-width: 380px;
+        }
+        .hero-visual .card-float i {
+            font-size: 2.8rem;
+            color: #0b3b5c;
+            background: #eef2f7;
+            padding: 20px;
+            border-radius: 50%;
+            margin-bottom: 16px;
+        }
+        .hero-visual .card-float p {
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+        .hero-visual .card-float .stat {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0b3b5c;
+        }
+
+        /* ============================================
+                   TRUSTED BY (New Section)
+                ============================================ */
+        .trusted {
+            padding: 40px 0;
+            background: #fff;
+            border-bottom: 1px solid #edf2f7;
+        }
+        .trusted p {
+            text-align: center;
+            font-weight: 500;
+            color: #a0aec0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.75rem;
+            margin-bottom: 20px;
+        }
+        .trusted-logos {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .trusted-logos span {
+            font-weight: 700;
+            color: #cbd5e0;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* ============================================
+                   SECTIONS (Shared)
+                ============================================ */
+        .section {
+            padding: 80px 0;
+        }
+        .section-gray {
+            background: #f8fafc;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0b3b5c;
+            text-align: center;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #4a5568;
+            max-width: 640px;
+            margin: 0 auto 48px;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+                   ABOUT
+                ============================================ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-grid h3 {
+            color: #0b3b5c;
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+        .about-grid p {
+            color: #4a5568;
+            margin-bottom: 16px;
+        }
+        .about-grid ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+        .about-grid ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #2d3748;
+        }
+        .about-grid ul li i {
+            color: #e67e22;
+            font-size: 1.2rem;
+        }
+
+        .about-badge {
+            background: #fff;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            border-left: 6px solid #e67e22;
+        }
+        .about-badge p {
+            font-size: 0.95rem;
+        }
+        .about-badge strong {
+            color: #0b3b5c;
+        }
+
+        /* ============================================
+                   SERVICES (Cards)
+                ============================================ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 36px 28px;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+            border-color: rgba(11, 59, 92, 0.1);
+        }
+        .service-card i {
+            font-size: 2.4rem;
+            color: #0b3b5c;
+            background: #eef2f7;
+            padding: 18px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: #0b3b5c;
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+                   EQUIPMENT
+                ============================================ */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .equipment-grid ul {
+            list-style: none;
+        }
+        .equipment-grid ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #edf2f7;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            color: #2d3748;
+        }
+        .equipment-grid ul li i {
+            color: #e67e22;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+                   CONTACT (CTA)
+                ============================================ */
+        .contact-cta {
+            background: #0b3b5c;
+            padding: 80px 0;
+            text-align: center;
+            color: #fff;
+        }
+        .contact-cta h2 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .contact-cta p {
+            max-width: 500px;
+            margin: 0 auto 32px;
+            font-size: 1.1rem;
+            opacity: 0.85;
+        }
+        .contact-cta .btn {
+            background: #e67e22;
+            border-color: #e67e22;
+        }
+        .contact-cta .btn:hover {
+            background: #d35400;
+            border-color: #d35400;
+        }
+        .contact-cta .btn i {
+            margin-right: 10px;
+        }
+
+        /* ============================================
+                   FOOTER
+                ============================================ */
+        footer {
+            background: #0b2a3f;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 48px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        footer h3 {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        footer p {
+            margin-bottom: 4px;
+        }
+        footer .social {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        footer .social a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.4rem;
+            transition: color 0.2s;
+        }
+        footer .social a:hover {
+            color: #fff;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                ============================================ */
+        @media (max-width: 992px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-visual .card-float {
+                max-width: 100%;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .trusted-logos {
+                gap: 24px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- =========================
-NAVIGATION
-========================= -->
-
-<nav class="navbar">
-
-<div class="logo">
-
-BARIZA
-
-<span>Pulmonary Support Services</span>
-
-</div>
-
-<ul class="nav-menu">
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#services">Services</a></li>
-
-<li><a href="#equipment">Equipment</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<!-- =========================
-HERO
-========================= -->
-
-<header class="hero">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<p class="hero-small">
-
-Clinical Excellence • Education • Equipment Solutions
-
-</p>
-
-<h1>
-
-Respiratory Care Solutions<br>
-
-That Improve Outcomes
-
-</h1>
-
-<p class="hero-description">
-
-Bariza Pulmonary Support Services LLC partners with hospitals,
-skilled nursing facilities, rehabilitation centers, home health agencies,
-and patients to improve respiratory outcomes through consulting,
-education, staff development, and respiratory equipment expertise.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#contact" class="btn btn-primary">
-
-Request Consultation
-
-</a>
-
-<a href="#services" class="btn btn-secondary">
-
-Our Services
-
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-</header>
-
-<!-- =========================
-ABOUT
-========================= -->
-
-<section id="about" class="section">
-
-<div class="container">
-
-<h2>
-
-Who We Are
-
-</h2>
-
-<p>
-
-Bariza Pulmonary Support Services LLC is a Southern California respiratory
-consulting company founded by Bonny Toufic, BBA, BSRC, RRT, RCP.
-
-Our mission is to improve respiratory care through clinical consulting,
-staff education, pulmonary program development, and respiratory equipment support.
-
-</p>
-
-</div>
-
-</section>
-
-<!-- =========================
-SERVICES
-========================= -->
-
-<section id="services" class="section gray">
-
-<div class="container">
-
-<h2>
-
-Healthcare Services
-
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>
-
-Respiratory Consulting
-
-</h3>
-
-<p>
-
-Clinical consulting for hospitals, rehabilitation centers,
-skilled nursing facilities and home health agencies.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-Staff Education
-
-</h3>
-
-<p>
-
-Evidence-based respiratory education for nurses,
-caregivers and healthcare professionals.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-Patient Education
-
-</h3>
-
-<p>
-
-COPD education, oxygen therapy,
-CPAP/BiPAP coaching and caregiver training.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-Pulmonary Programs
-
-</h3>
-
-<p>
-
-Support developing respiratory care programs
-that improve patient outcomes.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-EQUIPMENT
-========================= -->
-
-<section id="equipment" class="section">
-
-<div class="container">
-
-<h2>
-
-Respiratory Equipment Solutions
-
-</h2>
-
-<p>
-
-We provide education, implementation support,
-clinical guidance and consulting related to respiratory
-equipment used across acute care, post-acute care,
-home health and rehabilitation settings.
-
-Future partnerships with manufacturers and durable
-medical equipment providers will further expand our
-equipment support capabilities.
-
-</p>
-
-</div>
-
-</section>
-
-<!-- =========================
-CONTACT
-========================= -->
-
-<section id="contact" class="contact">
-
-<div class="container">
-
-<h2>
-
-Let's Work Together
-
-</h2>
-
-<p>
-
-Whether you represent a healthcare organization
-or you're seeking respiratory expertise,
-we're ready to help.
-
-</p>
-
-<a href="mailto:bonny.toufic@bariza.org?subject=Request Consultation" class="btn btn-primary">
-
-Contact Us Today
-
-</a>
-
-</div>
-
-</section>
-
-<!-- =========================
-FOOTER
-========================= -->
-
-<footer>
-
-<div class="container">
-
-<h3>
-
-Bariza Pulmonary Support Services LLC
-
-</h3>
-
-<p>
-
-Bonny Toufic, BBA, BSRC, RRT, RCP
-
-</p>
-
-<p>
-
-Founder & Clinical Respiratory Consultant
-
-</p>
-
-<p>
-
-bonny.toufic@bariza.org
-
-</p>
-
-<p>
-
-www.bariza.org
-
-</p>
-
-<p>
-
-© 2026 Bariza Pulmonary Support Services LLC
-
-</p>
-
-</div>
-
-</footer>
-
-<script src="script.js"></script>
+    <!-- =========================
+    NAVIGATION (Sticky)
+    ========================= -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                BARIZA
+                <span>Pulmonary Support</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#equipment">Equipment</a></li>
+                <li><a href="#contact" class="btn btn-primary" style="padding:8px 20px; font-size:0.8rem;">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- =========================
+    HERO
+    ========================= -->
+    <header class="hero">
+        <div class="container">
+
+            <!-- Left Column: Text -->
+            <div class="hero-content">
+                <span class="hero-tag">
+                    <i class="fas fa-heartbeat" style="margin-right:6px;"></i> Clinical Excellence
+                </span>
+                <h1>
+                    Respiratory Care <br />
+                    <span class="highlight">That Improves</span> Outcomes
+                </h1>
+                <p class="hero-description">
+                    Bariza Pulmonary Support Services partners with hospitals, skilled nursing
+                    facilities, and home health agencies to deliver consulting, education, and
+                    equipment expertise that drives better patient results.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i> Request Consultation
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-arrow-right"></i> Our Services
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Visual Credibility -->
+            <div class="hero-visual">
+                <div class="card-float">
+                    <i class="fas fa-user-md"></i>
+                    <div class="stat">15+</div>
+                    <p>Years of Clinical Respiratory Leadership</p>
+                    <hr style="margin:16px 0; border-color:#edf2f7;" />
+                    <div style="display:flex; justify-content:space-around; margin-top:12px;">
+                        <div>
+                            <div style="font-weight:700; color:#0b3b5c;">100+</div>
+                            <div style="font-size:0.7rem; color:#718096;">Facilities Served</div>
+                        </div>
+                        <div>
+                            <div style="font-weight:700; color:#0b3b5c;">RRT</div>
+                            <div style="font-size:0.7rem; color:#718096;">Registered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- =========================
+    TRUSTED BY (Social Proof)
+    ========================= -->
+    <section class="trusted">
+        <div class="container">
+            <p>Trusted by healthcare leaders across Southern California</p>
+            <div class="trusted-logos">
+                <span>🏥 MemorialCare</span>
+                <span>🏨 Kaiser Permanente</span>
+                <span>🧓 Aegis Living</span>
+                <span>🏠 AccentCare</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+    ABOUT
+    ========================= -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+
+                <div>
+                    <h3>Who We Are</h3>
+                    <p>
+                        <strong>Bariza Pulmonary Support Services LLC</strong> is a Southern California
+                        respiratory consulting firm founded by <strong>Bonny Toufic, BBA, BSRC, RRT, RCP</strong>.
+                        We exist to bridge the gap between clinical best practices and real-world
+                        respiratory care delivery.
+                    </p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Clinical consulting for acute &amp; post-acute care</li>
+                        <li><i class="fas fa-check-circle"></i> Evidence-based staff &amp; patient education</li>
+                        <li><i class="fas fa-check-circle"></i> Pulmonary program development &amp; quality improvement</li>
+                    </ul>
+                </div>
+
+                <div class="about-badge">
+                    <p style="font-size:1.1rem; font-weight:600; color:#0b3b5c; margin-bottom:8px;">
+                        <i class="fas fa-quote-left" style="color:#e67e22; margin-right:6px;"></i>
+                        Our mission is to improve respiratory outcomes through education, consulting, and partnership.
+                    </p>
+                    <p style="font-size:0.9rem; color:#4a5568;">
+                        — Bonny Toufic, RRT, RCP
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+    SERVICES
+    ========================= -->
+    <section id="services" class="section section-gray">
+        <div class="container">
+            <h2 class="section-title">Healthcare Services</h2>
+            <p class="section-subtitle">
+                Tailored respiratory support for healthcare organizations and the patients they serve.
+            </p>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <i class="fas fa-hospital-user"></i>
+                    <h3>Clinical Consulting</h3>
+                    <p>For hospitals, rehab centers, skilled nursing, and home health agencies seeking expert respiratory guidance.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Staff Education</h3>
+                    <p>Evidence-based respiratory training for nurses, caregivers, and interdisciplinary teams.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Patient &amp; Family Education</h3>
+                    <p>COPD management, oxygen therapy, CPAP/BiPAP coaching, and caregiver support.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-file-medical-alt"></i>
+                    <h3>Program Development</h3>
+                    <p>Design and implement pulmonary programs that improve outcomes and streamline care delivery.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+    EQUIPMENT
+    ========================= -->
+    <section id="equipment" class="section">
+        <div class="container">
+            <div class="equipment-grid">
+
+                <div>
+                    <h2 class="section-title" style="text-align:left;">Equipment Solutions</h2>
+                    <p style="color:#4a5568; margin-bottom:20px;">
+                        We provide education, implementation support, and clinical guidance for respiratory
+                        equipment across all care settings.
+                    </p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Acute care ventilators &amp; airway management</li>
+                        <li><i class="fas fa-check"></i> Home oxygen systems &amp; portable devices</li>
+                        <li><i class="fas fa-check"></i> CPAP, BiPAP &amp; non-invasive ventilation</li>
+                        <li><i class="fas fa-check"></i> Equipment competency &amp; safety training</li>
+                    </ul>
+                    <p style="margin-top:20px; font-style:italic; color:#718096;">
+                        <i class="fas fa-arrow-right" style="color:#e67e22;"></i>
+                        Future partnerships with DME providers will expand our equipment support capabilities.
+                    </p>
+                </div>
+
+                <div style="background:#f8fafc; padding:32px; border-radius:20px;">
+                    <i class="fas fa-microscope" style="font-size:2.4rem; color:#0b3b5c;"></i>
+                    <h3 style="margin:16px 0 8px; color:#0b3b5c;">Implementation Readiness</h3>
+                    <p style="color:#4a5568;">
+                        We help your team transition to new respiratory equipment with confidence,
+                        reducing errors and improving patient safety.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+    CONTACT (Strong CTA)
+    ========================= -->
+    <section id="contact" class="contact-cta">
+        <div class="container">
+            <h2>Let's Work Together</h2>
+            <p>
+                Whether you represent a healthcare organization or you're seeking respiratory expertise,
+                we're ready to help.
+            </p>
+            <a href="mailto:bonny.toufic@bariza.org?subject=Request%20Consultation" class="btn btn-accent">
+                <i class="fas fa-paper-plane"></i> Contact Us Today
+            </a>
+            <div style="margin-top:24px; font-size:0.9rem; opacity:0.7;">
+                <i class="fas fa-phone-alt"></i> (555) 123-4567 &nbsp;|&nbsp;
+                <i class="fas fa-envelope"></i> bonny.toufic@bariza.org
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+    FOOTER
+    ========================= -->
+    <footer>
+        <div class="container">
+            <h3>Bariza Pulmonary Support Services LLC</h3>
+            <p><strong>Bonny Toufic</strong>, BBA, BSRC, RRT, RCP</p>
+            <p>Founder &amp; Clinical Respiratory Consultant</p>
+            <p style="margin-top:12px;">
+                <i class="fas fa-map-pin"></i> Serving Southern California &amp; beyond
+            </p>
+            <p>© 2026 Bariza Pulmonary Support Services LLC</p>
+
+            <div class="social">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JS for future interactivity -->
+    <script>
+        // Simple sticky nav shadow effect on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 20) {
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>
